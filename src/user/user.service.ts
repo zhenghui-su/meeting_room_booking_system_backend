@@ -114,6 +114,15 @@ export class UserService {
       }, []),
     };
   }
+  async findUserDetailById(userId: number) {
+    const user = await this.userRepository.findOne({
+      where: {
+        id: userId,
+      },
+    });
+
+    return user;
+  }
   // 初始化数据
   async initData() {
     const user1 = new User();

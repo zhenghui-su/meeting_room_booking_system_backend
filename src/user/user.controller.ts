@@ -2,6 +2,8 @@ import {
   Body,
   Controller,
   Get,
+  HttpException,
+  HttpStatus,
   Inject,
   Post,
   Query,
@@ -14,6 +16,8 @@ import { RedisService } from 'src/redis/redis.service';
 import { LoginUserDto } from './dto/login-user.dto';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
+import { RequireLogin, UserInfo } from 'src/custom.decorator';
+import { UserDetailVo } from './vo/user-info.vo';
 
 @Controller('user')
 export class UserController {
@@ -180,7 +184,23 @@ export class UserController {
       throw new UnauthorizedException('token 已失效，请重新登录');
     }
   }
+  @Get('info')
+  @RequireLogin()
+  async info(@UserInfo('userId') userId: number) {
+    const user = await this.userService.findUserDetailById(userId);
+    if (!user) throw new HttpException('用户不存在', HttpStatus.BAD_REQUEST);
+    const vo = new UserDetailVo();
+    vo.id = user.id;
+    vo.username = user.username;
+    vo.nickName = user.nickName;
+    vo.email = user.email;
+    vo.headPic = user.headPic;
+    vo.phoneNumber = user.phoneNumber;
+    vo.isFrozen = user.isFrozen;
+    vo.createTime = user.createTime;
 
+    return vo;
+  }
   @Get('init-data')
   async initData() {
     await this.userService.initData();
