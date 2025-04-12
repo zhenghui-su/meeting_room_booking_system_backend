@@ -1,0 +1,30 @@
+POST http://localhost:3000/user/login
+Content-Type: application/json
+# Authorization: Bearer your_token
+
+{
+  "username": "lisi",
+  "password": "222222"
+}
+
+GET http://localhost:3000/aaa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJuYW1lIjoibGlzaSIsInJvbGVzIjpbIuaZrumAmueUqOaItyJdLCJwZXJtaXNzaW9ucyI6W3siaWQiOjEsImNvZGUiOiJjY2MiLCJkZXNjcmlwdGlvbiI6Iuiuv-mXriBjY2Mg5o6l5Y-jIn1dLCJpYXQiOjE3NDQ0NTkzODcsImV4cCI6MTc0NDQ2MTE4N30.pa3PsKE5pBcpR-k0vCqcP7ylzmR9_3vTejsJePow1ME
+
+
+GET http://localhost:3000/user/refresh?refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlhdCI6MTc0NDQ1ODMwMSwiZXhwIjoxNzQ1MDYzMTAxfQ.i-hQ83hcQ7a1n1VB6IPLXo2aP759oCSWPr07wzOHZSo
+
+
+
+POST http://localhost:3000/user/admin/login
+Content-Type: application/json
+# Authorization: Bearer your_token
+
+{
+  "username": "zhangsan",
+  "password": "111111"
+}
+
+GET http://localhost:3000/aaa
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoiemhhbmdzYW4iLCJyb2xlcyI6WyLnrqHnkIblkZgiXSwicGVybWlzc2lvbnMiOlt7ImlkIjoxLCJjb2RlIjoiY2NjIiwiZGVzY3JpcHRpb24iOiLorr_pl64gY2NjIOaOpeWPoyJ9LHsiaWQiOjIsImNvZGUiOiJkZGQiLCJkZXNjcmlwdGlvbiI6Iuiuv-mXriBkZGQg5o6l5Y-jIn1dLCJpYXQiOjE3NDQ0NTkzMzUsImV4cCI6MTc0NDQ2MTEzNX0.IQO8PQsTBRWK_p8w91Q0kNIOUWy1dD55eb__vM1jbcM
+
+GET http://localhost:3000/user/refresh?refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTc0NDQ1ODM3MSwiZXhwIjoxNzQ1MDYzMTcxfQ.sl0tdH1MIO1HPq85hCvADPDfQPBi7dsEfbDp2rUV1HY
