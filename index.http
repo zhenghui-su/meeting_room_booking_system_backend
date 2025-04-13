@@ -62,3 +62,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZ
   "email": "xx@xx.com",
   "captcha": "12312"
 }
+
+GET http://localhost:3000/user/list?pageNo=1
+
+GET http://localhost:3000/user/list?pageNo=1&pageSize=4&nickName=李
