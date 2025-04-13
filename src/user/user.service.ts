@@ -107,6 +107,7 @@ export class UserService {
       username: user?.username,
       isAdmin: user?.isAdmin,
       roles: user?.roles.map((item) => item.name),
+      email: user?.email,
       permissions: user?.roles.reduce((arr: any[], item) => {
         item.permissions.forEach((permission) => {
           if (arr.indexOf(permission) === -1) {
