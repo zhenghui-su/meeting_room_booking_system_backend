@@ -66,3 +66,28 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZ
 GET http://localhost:3000/user/list?pageNo=1
 
 GET http://localhost:3000/user/list?pageNo=1&pageSize=4&nickName=李
+
+POST http://localhost:3000/meeting-room/create
+Content-Type: application/json
+
+{
+  "name": "海王星",
+  "capacity": 10,
+  "location": "四层西",
+  "equipment": "白板,电视",
+  "description": "海王星会议室"
+}
+
+PUT http://localhost:3000/meeting-room/update
+Content-Type: application/json
+
+{
+  "id": 4,
+  "name": "海王星2",
+  "capacity": 10,
+  "location": "四层西",
+  "equipment": "白板,电视",
+  "description": ""
+}
+
+DELETE http://localhost:3000/meeting-room/4
