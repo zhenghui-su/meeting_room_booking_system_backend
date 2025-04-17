@@ -42,7 +42,7 @@ Content-Type: application/json
 
 {
   "username": "zhangsan",
-  "password": "111111"
+  "password": "222222"
 }
 
 GET http://localhost:3000/aaa
@@ -91,3 +91,33 @@ Content-Type: application/json
 }
 
 DELETE http://localhost:3000/meeting-room/4
+
+GET http://localhost:3000/booking/list?meetingRoomName=木&username=su
+
+POST http://localhost:3000/booking/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoiemhhbmdzYW4iLCJlbWFpbCI6IjM0MzE5NjMyM0BxcS5jb20iLCJyb2xlcyI6WyLnrqHnkIblkZgiXSwicGVybWlzc2lvbnMiOlt7ImlkIjoxLCJjb2RlIjoiY2NjIiwiZGVzY3JpcHRpb24iOiLorr_pl64gY2NjIOaOpeWPoyJ9LHsiaWQiOjIsImNvZGUiOiJkZGQiLCJkZXNjcmlwdGlvbiI6Iuiuv-mXriBkZGQg5o6l5Y-jIn1dLCJpYXQiOjE3NDQ4NzMwODEsImV4cCI6MTc0NDg3NDg4MX0.DvtJ3yBcPM5CRwbJeIWsJLCilJ02hnOFuiOs8yUM3jU
+
+{
+    "meetingRoomId": 3,
+    "startTime": 1703986859333,
+    "endTime": 1703987859333
+}
+
+POST http://localhost:3000/booking/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInVzZXJuYW1lIjoiemhhbmdzYW4iLCJlbWFpbCI6IjM0MzE5NjMyM0BxcS5jb20iLCJyb2xlcyI6WyLnrqHnkIblkZgiXSwicGVybWlzc2lvbnMiOlt7ImlkIjoxLCJjb2RlIjoiY2NjIiwiZGVzY3JpcHRpb24iOiLorr_pl64gY2NjIOaOpeWPoyJ9LHsiaWQiOjIsImNvZGUiOiJkZGQiLCJkZXNjcmlwdGlvbiI6Iuiuv-mXriBkZGQg5o6l5Y-jIn1dLCJpYXQiOjE3NDQ4NzMwODEsImV4cCI6MTc0NDg3NDg4MX0.DvtJ3yBcPM5CRwbJeIWsJLCilJ02hnOFuiOs8yUM3jU
+
+{
+    "meetingRoomId": 3,
+    "startTime": 1703986959333,
+    "endTime": 1703986859333
+}
+
+GET http://localhost:3000/booking/apply/1
+
+GET http://localhost:3000/booking/reject/2
+
+GET http://localhost:3000/booking/unbind/3
+
+GET http://localhost:3000/booking/urge/2
