@@ -14,7 +14,7 @@ async function bootstrap() {
   app.useStaticAssets('uploads', { prefix: '/uploads' });
 
   app.enableCors();
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe({ transform: true }));
   app.useGlobalInterceptors(new FormatResponseInterceptor());
   app.useGlobalInterceptors(new InvokeRecordInterceptor());
   // app.useGlobalFilters(new UnloginFilter());
