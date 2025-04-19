@@ -121,3 +121,7 @@ GET http://localhost:3000/booking/reject/2
 GET http://localhost:3000/booking/unbind/3
 
 GET http://localhost:3000/booking/urge/2
+
+GET http://localhost:3000/statistic/userBookingCount?startTime=2023-1-1&endTime=2025-7-1
+
+GET http://localhost:3000/statistic/meetingRoomUsedCount?startTime=2023-1-1&endTime=2025-7-1
